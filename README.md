@@ -1,7 +1,7 @@
 A lightweight and user-friendly Hospital Management System built using Java (JDK 21), Swing UI, and an embedded H2 database.
 Designed to simplify hospital operations such as ambulance allocation, staff monitoring, and emergency management.
 
-🚀 Features
+🚀 Features     
     •🚑 Real-time ambulance allocation
     •🏥 Manage doctors, staff, and departments
     •🗂 Embedded H2 database (no external setup needed)
@@ -19,7 +19,7 @@ Designed to simplify hospital operations such as ambulance allocation, staff mon
 | Build System | Simple Java project  |
 
 
-📁Project Structure
+📁Project Structure               
 
 AR-HOSPITAL/
 ├── src/                     # Java source code
@@ -31,35 +31,35 @@ AR-HOSPITAL/
 ├── .project                 # Eclipse project config
 └── README.md
 
-✅ Prerequisites
+✅ Prerequisites          
     •Java JDK 21
     •Eclipse IDE or any Java-compatible IDE
     •(Optional) Git
 
-📥 Setup & Installation
+📥 Setup & Installation       
 1. Clone the repository
    git clone https://github.com/rakeshkumarg2119/AR-HOSPITAL.git
    cd AR-HOSPITAL
    Or download the ZIP.
    
-▶️ Running the Application
-Option 1 — Run in Eclipse (Recommended)
+▶️ Running the Application     
+Option 1 — Run in Eclipse (Recommended)   
     1. Open Eclipse
     2. Go to File → Import → Existing Projects into Workspace
     3. Select the cloned project
     4. Ensure H2 JAR is included in the build path
     5. Run Main.java
 
-Option 2 — Run from Terminal
+Option 2 — Run from Terminal   
     If all dependencies are added:
     java -cp "bin;lib/h2.jar" Main (Use : instead of ; on macOS/Linux.)
 
-🗄️ Database Information
+🗄️ Database Information       
     •Uses H2 embedded database
     •No setup / installation required
     •Data stored automatically in the user’s home directory
 
-⚙️ Database Configuration
+⚙️ Database Configuration     
     Your project dynamically creates a secure storage folder inside the user’s home directory:
     private static final String USER = "sa";
 private static final String PASSWORD = "";
@@ -71,31 +71,31 @@ private static String getDatabaseUrl() {
     return "jdbc:h2:file:" + dbPath.toString() + ";AUTO_SERVER=TRUE";
 }
 
-✔️ Explanation
+✔️ Explanation   
     •Stores DB under: C:/Users/<username>/.data/test
     •Automatically creates directory if missing
     •Uses AUTO_SERVER=TRUE to prevent locking issues
     •No external DB server required
     
-🧰 Log File
+🧰 Log File    
     •app_log.txt stores runtime logs
     •Can be cleared anytime
 
-🌟 Future Enhancements
+🌟 Future Enhancements   
     •User authentication (admin/staff login)
     •Patient management module
     •Modern UI theme (dark mode)
     •Database backup & export
     •Analytics dashboard
     
-👥 Contributors
+👥 Contributors   
     This project was created by:
         •Rakesh Kumar G
         •Amutha Rohith P
 💡 Contributions are always welcome!
 Feel free to submit issues or pull requests.
 
-📜 License — MIT License
+📜 License — MIT License   
 MIT License
 
 Copyright (c) 2025 Rakesh Kumar G, Amutha Rohith P
