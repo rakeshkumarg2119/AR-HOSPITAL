@@ -2,22 +2,25 @@ A lightweight and user-friendly Hospital Management System built using Java (JDK
 Designed to simplify hospital operations such as ambulance allocation, staff monitoring, and emergency management.
 
 🚀 Features
-🚑 Real-time ambulance allocation
-🏥 Manage doctors, staff, and departments
-🗂 Embedded H2 database (no external setup needed)
-🖥️ Simple and clean Swing interface
-⚡ Fast, portable, and offline
-👨‍💻 Beginner-friendly architecture
+    •🚑 Real-time ambulance allocation
+    •🏥 Manage doctors, staff, and departments
+    •🗂 Embedded H2 database (no external setup needed)
+    •🖥️ Simple and clean Swing interface
+    •⚡ Fast, portable, and offline
+    •👨‍💻 Beginner-friendly architecture
 
 🛠️ Tech Stack
-Component  	  Technology
-Language	    Java (JDK 21)
-UI Framework	Java Swing
-Database	    H2 Embedded Database
-IDE	          Eclipse
-Build System	Simple Java project
+| Component    | Technology           |
+| ------------ | -------------------- |
+| Language     | Java (JDK 21)        |
+| UI Framework | Java Swing           |
+| Database     | H2 Embedded Database |
+| IDE          | Eclipse              |
+| Build System | Simple Java project  |
 
-📁 Project Structure
+
+📁Project Structure
+
 AR-HOSPITAL/
 ├── src/                     # Java source code
 ├── bin/                     # Compiled class files
@@ -29,74 +32,67 @@ AR-HOSPITAL/
 └── README.md
 
 ✅ Prerequisites
-Java JDK 21
-Eclipse IDE or any Java-compatible IDE
-(Optional) Git
+    •Java JDK 21
+    •Eclipse IDE or any Java-compatible IDE
+    •(Optional) Git
 
 📥 Setup & Installation
 1. Clone the repository
-git clone https://github.com/rakeshkumarg2119/AR-HOSPITAL.git
-cd AR-HOSPITAL
-Or download the ZIP.
-
+   git clone https://github.com/rakeshkumarg2119/AR-HOSPITAL.git
+   cd AR-HOSPITAL
+   Or download the ZIP.
+   
 ▶️ Running the Application
 Option 1 — Run in Eclipse (Recommended)
-Open Eclipse
-
-Go to File → Import → Existing Projects into Workspace
-
-Select the cloned project
-
-Ensure H2 JAR is included in the build path
-
-Run Main.java
+    1. Open Eclipse
+    2. Go to File → Import → Existing Projects into Workspace
+    3. Select the cloned project
+    4. Ensure H2 JAR is included in the build path
+    5. Run Main.java
 
 Option 2 — Run from Terminal
-
-If all dependencies are in classpath:
-
-java -cp "bin;lib/h2.jar" Main
-
-
-(Use : instead of ; on macOS/Linux.)
+    If all dependencies are added:
+    java -cp "bin;lib/h2.jar" Main (Use : instead of ; on macOS/Linux.)
 
 🗄️ Database Information
+    •Uses H2 embedded database
+    •No setup / installation required
+    •Data stored automatically in the user’s home directory
 
-Uses H2 embedded database
+⚙️ Database Configuration
+    Your project dynamically creates a secure storage folder inside the user’s home directory:
+    private static final String USER = "sa";
+private static final String PASSWORD = "";
 
-No installation required
+private static String getDatabaseUrl() {
+    String userHome = System.getProperty("user.home");
+    java.nio.file.Path dbPath = java.nio.file.Paths.get(userHome, ".data", "test");
+    dbPath.getParent().toFile().mkdirs();
+    return "jdbc:h2:file:" + dbPath.toString() + ";AUTO_SERVER=TRUE";
+}
 
-Data is stored locally inside the project directory
-
-Optional: open database using H2 console
-
-java -jar h2.jar
-
-
-Use JDBC URL:
-
-jdbc:h2:./h2-db/hospital
-
+✔️ Explanation
+    •Stores DB under: C:/Users/<username>/.data/test
+    •Automatically creates directory if missing
+    •Uses AUTO_SERVER=TRUE to prevent locking issues
+    •No external DB server required
+    
 🧰 Log File
-
-app_log.txt stores runtime logs
-
-Can be cleared anytime
+    •app_log.txt stores runtime logs
+    •Can be cleared anytime
 
 🌟 Future Enhancements
-  User authentication (admin, staff login)
-  Patient management module
-  UI improvements (dark mode, modern layout)
-  Database backup and export
-  Analytics dashboard
+    •User authentication (admin/staff login)
+    •Patient management module
+    •Modern UI theme (dark mode)
+    •Database backup & export
+    •Analytics dashboard
+    
 👥 Contributors
-
-This project was created by:
-
-  Rakesh Kumar G
-  Amutha Rohith P
-
-Contributions are always welcome!
+    This project was created by:
+        •Rakesh Kumar G
+        •Amutha Rohith P
+💡 Contributions are always welcome!
 Feel free to submit issues or pull requests.
 
 📜 License — MIT License
@@ -121,4 +117,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+    
+
+
+
+
 
