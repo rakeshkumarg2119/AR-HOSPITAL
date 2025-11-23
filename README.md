@@ -48,7 +48,7 @@ Option 1 — Run in Eclipse (Recommended)
     2. Go to File → Import → Existing Projects into Workspace      
     3. Select the cloned project    
     4. Ensure H2 JAR is included in the build path      
-    5. Run Main.java     
+    5. Run MainApp.java     
 
 Option 2 — Run from Terminal          
     If all dependencies are added:        
