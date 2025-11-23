@@ -7,17 +7,20 @@ import database.DatabaseHelper;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.Objects;
 
 
 public class MainApp extends JPanel{
-	private static final long serialVersionUID = 1L;
+	@Serial
+    private static final long serialVersionUID = 1L;
 //	public static void main(String[]args) {
 	JFrame frame;
 	CardLayout cardLayout;
 	JPanel cardsPanel;
-	public  MainApp() {
+	@SuppressWarnings({"ResultOfMethodCallIgnored", "CallToPrintStackTrace"})
+    public  MainApp() {
 		 setLayout(new GridBagLayout());
-		frame=new JFrame("AR HOSPITAL");
+		 frame=new JFrame("AR HOSPITAL");
 		// Check for database file first
 		
 		File lockFile = new File("app.lock");
@@ -27,14 +30,15 @@ public class MainApp extends JPanel{
 		    try {
 		        lockFile.createNewFile();
 		    } catch (IOException e) {
-		        e.printStackTrace();
+                //noinspection CallToPrintStackTrace
+                e.printStackTrace();
 		    }
 		}
 		cardLayout = new CardLayout();
 		cardsPanel = new JPanel(cardLayout);
 		JPanel loginPanel = new JPanel(new FlowLayout());
 		frame.setSize(300,150);
-		ImageIcon icon = new ImageIcon("C:/Users/HP/Downloads/icons8-hospital-32.png");
+        ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/icons/icons8-hospital-32.png")));
 	    Image image= icon.getImage();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//Shutdown

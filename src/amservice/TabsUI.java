@@ -1,6 +1,7 @@
 package amservice;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Objects;
 
 import javax.swing.table.*;
 
@@ -24,12 +25,12 @@ public class TabsUI extends JPanel {
         //frame.setSize(500, 500);
 
         JTabbedPane tabbedPane = new JTabbedPane();
-        ImageIcon icon = new ImageIcon(getClass().getResource("/icons/icons8-hospital-32.png"));
+        //ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/icons/icons8-ambulancec-32.png")));
         //ImageIcon icon = new ImageIcon("C:/Users/HP/Downloads/icons8-hospital-32.png");
 	     @SuppressWarnings("unused")
-		Image image= icon.getImage();
-	     ImageIcon List= new ImageIcon(getClass().getResource("/icons/icons8-list-32.png"));
-	     ImageIcon Ambulance = new ImageIcon(getClass().getResource("/icons/icons8-ambulance-32.png"));
+         //Image image= icon.getImage();
+	     ImageIcon List= new ImageIcon(Objects.requireNonNull(getClass().getResource("/icons/icons8-list-32.png")));
+	     ImageIcon Ambulance = new ImageIcon(Objects.requireNonNull(getClass().getResource("/icons/icons8-ambulance-32.png")));
         JPanel panel1 = new JPanel();
         panel1.add(new JLabel("Welcome Admin"));
         JButton list = new JButton("List Doctors /Other Staff     ");
