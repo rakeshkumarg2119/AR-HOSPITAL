@@ -24,7 +24,7 @@ Designed to simplify hospital operations such as ambulance allocation, staff mon
 AR-HOSPITAL/          
 ├── src/                     # Java source code          
 ├── bin/                     # Compiled class files          
-├── resources/                                                    
+├── resources/                                                     
 │    └── icons/              # UI graphics                            
 ├── app_log.txt              # Log file                   
 ├── .classpath               # Eclipse classpath config     
